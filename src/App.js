@@ -5,7 +5,7 @@ import Projects from "./Projects";
 import Resume from './Resume';
 import Contact from "./Contact";
 import './css/App.css';
-import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { HashRouter,Routes,Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Helmet>
         <title>SP Tech</title>
       </Helmet>
-      <BrowserRouter basename={`${process.env.PUBLIC_URL}`}>
+      <HashRouter>
         <Routes>
           <Route path="" element={<Navbar/>}>
             <Route index element={<Home/>}/>
@@ -23,7 +23,7 @@ function App() {
             <Route path="contact" element={<Contact/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
